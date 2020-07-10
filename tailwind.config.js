@@ -1,7 +1,10 @@
 module.exports = {
   purge: {
     enabled: true,
-    content: ['./src/**/*.svelte']
+    content: [
+      './src/components/*.svelte',
+      './src/routes/*.svelte',
+    ]
   },
   theme: {},
   variants: {},
