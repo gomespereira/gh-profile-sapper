@@ -28,7 +28,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || event.request.headers.has('range')) return
 
-  const url = new URL(event.request.url);
+  const url = new URL(event.request.url)
 
   if (!url.protocol.startsWith('http')) return
 
