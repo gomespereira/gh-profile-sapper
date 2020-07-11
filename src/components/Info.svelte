@@ -1,12 +1,18 @@
 <script>
-  export let info
+  import { stores } from '@sapper/app'
+  import { onMount } from 'svelte'
 
-  const formattedDate = new Date(info.created_at).toLocaleDateString('en-US', {
-    month: 'long',
-    day: '2-digit',
-    year: 'numeric'
-  })
+  import { fetcher, dateFormatter } from '../utils/utils'
+
+  const { page, session } = stores()
+  const { user } = $page.query
+  let info = {}
+  const formattedDate = dateFormatter(info.created_at)
   const formattedNumber = `${(info.followers / 1000).toFixed(1)}k`
+
+  onMount(async () => {
+    info = await fetcher(`https://api.github.com/users/${user}`, $session)
+  })
 </script>
 
 <section class="flex flex-col items-center space-y-4">

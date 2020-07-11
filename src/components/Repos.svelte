@@ -1,5 +1,16 @@
 <script>
-  export let repos
+  import { stores } from '@sapper/app'
+  import { onMount } from 'svelte'
+
+  import { fetcher } from '../utils/utils'
+
+  const { page, session } = stores()
+  const { user } = $page.query
+  let repos = []
+
+  onMount(async () => {
+    repos = await fetcher(`https://api.github.com/users/${user}/repos?per_page=18`, $session)
+  })
 </script>
 
 <section class="flex flex-col items-center mt-4">
