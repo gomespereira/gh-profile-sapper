@@ -626,8 +626,6 @@ video {
 @font-face {
   font-family: 'DM Mono';
 
-  font-display: swap;
-
   src: url('/fonts/dm-mono.woff2') format('woff2'),
        url('/fonts/dm-mono.woff') format('woff'),
        url('/fonts/dm-mono.ttf') format('truetype');
