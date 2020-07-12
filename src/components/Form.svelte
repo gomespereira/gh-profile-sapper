@@ -1,7 +1,15 @@
 <script>
+  import { onMount } from 'svelte'
   import { goto } from '@sapper/app'
 
   let username = ''
+
+  onMount(() => {
+    document.addEventListener('keyup', event => {
+      const element = document.querySelector('#username')
+      if (event.keyCode === 191) element.focus()
+    })
+  })
 
   function handleSubmit() {
     goto(`/profile?user=${username}`)
