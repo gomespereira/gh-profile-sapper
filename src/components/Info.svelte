@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { stores } from '@sapper/app'
   import { onMount, beforeUpdate } from 'svelte'
 
@@ -6,9 +6,9 @@
 
   const { page, session } = stores()
   const { user } = $page.query
-  let info = {}
-  let formattedDate
-  let formattedNumber
+  let info: any = {}
+  let formattedDate: string
+  let formattedNumber: string
 
   onMount(async () => {
     info = await fetcher(`https://api.github.com/users/${user}`, $session)
@@ -82,7 +82,7 @@
         <a
           class="font-bold hover:text-blue-900"
           href={`https://github.com/${info.login}?tab=followers`}
-          target="__blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           {#if info.followers >= 1000}
@@ -95,7 +95,7 @@
         <a
           class="font-bold hover:text-blue-900"
           href={`https://github.com/${info.login}?tab=following`}
-          target="__blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           {info.following}

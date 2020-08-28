@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
   import { goto } from '@sapper/app'
 
   let username = ''
 
   onMount(() => {
-    document.addEventListener('keyup', event => {
-      const element = document.querySelector('#username')
-      if (event.keyCode === 191) element.focus()
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
+      const element = document.querySelector<HTMLElement>('#username')
+
+      if (event.code === 'Slash') element.focus()
+      if (event.code === 'Escape') element.blur()
     })
   })
 
-  function handleSubmit() {
+  function handleSubmit(): void {
     goto(`/profile?user=${username}`)
   }
 </script>
