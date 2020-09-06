@@ -16,3 +16,7 @@ export function dateFormatter(date) {
     year: 'numeric'
   })
 }
+
+export function numberFormatter(number) {
+  return `${(number / 1000).toFixed(1)}k`
+}

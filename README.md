@@ -2,6 +2,10 @@
 
 This project is based on [GitHub Profile Standard](https://github.com/gomespereira/gh-profile-standard), the only difference are the modules used.
 
-# Modules
+## Modules
 
 - [`sapper`](https://sapper.svelte.dev/)
+
+## Known Issues
+
+- [ ] Odd whitespace and line breaks

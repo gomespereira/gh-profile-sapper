@@ -2,7 +2,7 @@
   <title>GitHub Profile</title>
 </svelte:head>
 
-<script>
+<script lang="ts">
   import Header from '../components/Header.svelte'
   import Footer from '../components/Footer.svelte'
 

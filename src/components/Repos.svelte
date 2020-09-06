@@ -17,9 +17,7 @@
   <div class="font-bold">Repositories</div>
   <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
     {#each repos as repo}
-      <div
-        class="flex flex-col space-y-2 p-6 bg-white border-2 border-blue-900 rounded-md"
-      >
+      <div class="flex flex-col space-y-2 p-6 bg-white border-2 border-blue-900 rounded-md">
         <div class="flex justify-end">
           <a
             href={repo.html_url}
